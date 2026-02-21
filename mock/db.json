@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@hrpro.com",
+      "password": "123456",
+      "role": "admin",
+      "name": "HR Admin"
+    },
+    {
+      "id": 2,
+      "email": "manager@hrpro.com",
+      "password": "123456",
+      "role": "manager",
+      "name": "Team Manager"
+    },
+    {
+      "id": 3,
+      "email": "employee@hrpro.com",
+      "password": "123456",
+      "role": "employee",
+      "name": "Regular Employee"
+    }
+  ],
+  "dashboardStats": [
+    { "title": "Total Employees", "value": 120 },
+    { "title": "On Leave Today", "value": 8 },
+    { "title": "New Joinees", "value": 5 }
+  ],
+  "employees": [
+    { "id": 1, "name": "John Doe", "department": "IT", "status": "Active" },
+    { "id": 2, "name": "Jane Smith", "department": "HR", "status": "On Leave" }
+  ],
+  "leaveRequests": []
+}
