@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="login-container">
+
+  <!-- Left Branding Section -->
+  <div class="login-brand">
+    <div class="brand-content">
+      <h1>HRPro</h1>
+      <p>Smart HR Management Platform</p>
+      <ul>
+        <li>✔ Manage Employees</li>
+        <li>✔ Track Leave Requests</li>
+        <li>✔ Real-Time HR Analytics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Right Form Section -->
+  <div class="login-form">
+    <mat-card>
+      <h2>Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width">
+          Login
+        </button>
+
+        <p class="error" *ngIf="error">{{ error }}</p>
+
+      </form>
+    </mat-card>
+  </div>
+
+</div>

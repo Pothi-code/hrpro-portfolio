@@ -1,1 +1,57 @@
-<p>main-layout works!</p>
+<mat-sidenav-container class="container">
+
+  <!-- Sidebar -->
+  <mat-sidenav #drawer [mode]="isMobile?'over':'side'" [opened]="!isMobile" class="sidenav">
+
+    <h2 class="logo">HR Pro</h2>
+
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+      </a>
+
+      <a *ngIf="role() === 'admin'"
+         mat-list-item
+         routerLink="/employees"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>group</mat-icon>
+        Employees
+      </a>
+
+      <a *ngIf="role() === 'hr'"
+         mat-list-item
+         routerLink="/settings"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>settings</mat-icon>
+        HR Settings
+      </a>
+
+    </mat-nav-list>
+
+    <div class="spacer"></div>
+
+    <button mat-button color="warn" (click)="logout()" (click)="closeIfMobile()">
+      Logout
+    </button>
+
+  </mat-sidenav>
+
+  <!-- Content -->
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button *ngIf="isMobile" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      Welcome, {{ authstate.user()?.name }}
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
