@@ -1,0 +1,26 @@
+<h2>{{isEditMode?'Edit Employee':'Create Employee'}}</h2>
+<form [formGroup]="empForm" (ngSubmit)="create()">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="manager">Manager</mat-option>
+            <mat-option value="employee">Employee</mat-option>
+            <mat-option value="hr">HR</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <input matInput formControlName="department">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">{{isEditMode?'Update':'Create'}}</button>
+</form>

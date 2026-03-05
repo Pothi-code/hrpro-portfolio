@@ -22,21 +22,70 @@
       "name": "Regular Employee"
     },
     {
-      "id":4,
-      "email":"hr@hrpro.com",
-      "password":"123456",
-      "role":"hr",
-      "name":"HR"
+      "id": 4,
+      "email": "hr@hrpro.com",
+      "password": "123456",
+      "role": "hr",
+      "name": "HR"
     }
   ],
   "dashboardStats": [
-    { "title": "Total Employees", "value": 120 },
-    { "title": "On Leave Today", "value": 8 },
-    { "title": "New Joinees", "value": 5 }
+    {
+      "title": "Total Employees",
+      "value": 120
+    },
+    {
+      "title": "On Leave Today",
+      "value": 8
+    },
+    {
+      "title": "New Joinees",
+      "value": 5
+    }
   ],
   "employees": [
-    { "id": 1, "name": "John Doe", "department": "IT", "status": "Active" },
-    { "id": 2, "name": "Jane Smith", "department": "HR", "status": "On Leave" }
+    {
+      "name": "hir",
+      "email": "hir@test.com",
+      "role": "manager",
+      "department": "IT",
+      "id": 2
+    },
+    {
+      "name": "dddf",
+      "email": "dsdsa@test.com",
+      "role": "manager",
+      "department": "fd",
+      "id": 6
+    },
+    {
+      "name": "fgfdggf",
+      "email": "ads@test.com",
+      "role": "manager",
+      "department": "sfsd",
+      "id": 7
+    },
+    {
+      "name": "dsfdsfd",
+      "email": "dfs@test.com",
+      "role": "manager",
+      "department": "sdfd",
+      "id": 8
+    },
+    {
+      "name": "hyt",
+      "email": "ghh@test.com",
+      "role": "manager",
+      "department": "hj",
+      "id": 9
+    },
+    {
+      "name": "sasa",
+      "email": "as@test.com",
+      "role": "manager",
+      "department": "IT",
+      "id": 10
+    }
   ],
   "leaveRequests": []
 }
