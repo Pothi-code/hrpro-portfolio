@@ -1,0 +1,21 @@
+<h2>Leave Balance</h2>
+<table mat-table [dataSource]="leaveBalances()" class="mat-elevation-z8">
+     <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let leaveBalance">{{leaveBalance.type}}</td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let leaveBalance">{{leaveBalance.total}}</td>
+    </ng-container>
+    <ng-container matColumnDef="used">
+        <th mat-header-cell *matHeaderCellDef>Used</th>
+        <td mat-cell *matCellDef="let leaveBalance">{{leaveBalance.used}}</td>
+    </ng-container>
+     <ng-container matColumnDef="remaining">
+        <th mat-header-cell *matHeaderCellDef>Remaining</th>
+        <td mat-cell *matCellDef="let leaveBalance">{{leaveBalance.remaining}}</td>
+    </ng-container>
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

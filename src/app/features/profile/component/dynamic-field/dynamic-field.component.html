@@ -1,0 +1,55 @@
+<div [formGroup]="form" *ngIf="field">
+   <!-- TEXT FIELD -->
+  <mat-form-field appearance="outline" *ngIf="field.type==='text'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput [formControlName]="field.name">
+  </mat-form-field>
+  <!--email-->
+  <mat-form-field appearance="outline" *ngIf="field.type==='email'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput type="email" [formControlName]="field.name">
+  </mat-form-field>
+  <!--number-->
+  <mat-form-field appearance="outline" *ngIf="field.type==='number'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput type="number" [formControlName]="field.name">
+  </mat-form-field>
+  <!--Date-->
+  <mat-form-field appearance="outline" *ngIf="field.type==='date'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput type="date" [formControlName]="field.name">
+  </mat-form-field>
+<!--textarea-->
+<mat-form-field appearance="outline" *ngIf="field.type==='textarea'">
+  <mat-label>{{field.label}}</mat-label>
+  <textarea matInput [formControlName]="field.name"></textarea>
+  </mat-form-field>
+  <!--select-->
+  <mat-form-field appearance="outline" *ngIf="field.type==='select'">
+    <mat-label>{{field.label}}</mat-label>
+    <mat-select >
+      <mat-option *ngFor="let opt of field.option" [value]="opt">
+        {{opt}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+<!--checkbox-->
+<mat-form-field class="checkbox-field" *ngIf="field.type==='checkbox'">
+  <label>
+    <input type="checkbox" [formControlName]="field.name">
+    {{field.label}}
+  </label>
+</mat-form-field>
+<div *ngIf="field.type === 'file'">
+  <label>{{field.label}}</label>
+  <input type="file">
+</div>
+
+ 
+</div>
+    
+    
+
+
+

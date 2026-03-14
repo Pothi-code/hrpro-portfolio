@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { adminMenu,managerMenu,employeeMenu } from './config/sidebar.config';
 
 
 
@@ -35,6 +36,15 @@ export class MainLayoutComponent {
 
 
   role=computed(()=>this.authstate.role());
+  menu=computed(()=>
+    {
+      const role = this.authstate.role();
+      if(role==='admin')return adminMenu;
+      if(role==='manager')return managerMenu;
+      return employeeMenu;
+
+    }
+);
  
   logout(){
     this.authstate.logout();

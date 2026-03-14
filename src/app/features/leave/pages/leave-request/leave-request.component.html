@@ -1,0 +1,28 @@
+<h2>Leave Request Form</h2>
+
+<form [formGroup]="leaveForm" (ngSubmit)="leaveSubmit()">
+
+  <mat-form-field appearance="outline">
+    <mat-label>From</mat-label>
+    <input matInput type="date" formControlName="fromDate">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>To</mat-label>
+    <input matInput type="date" formControlName="toDate">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Type</mat-label>
+    <input matInput formControlName="type">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Reason</mat-label>
+    <textarea matInput formControlName="reason"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">
+    Submit Leave
+  </button>
+
+</form>

@@ -1,0 +1,25 @@
+.holiday-card {
+  width: 350px;
+}
+
+::ng-deep .holiday-date .mat-calendar-body-cell-content {
+  background-color: #e53935;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+::ng-deep .holiday-date .mat-calendar-body-cell-content:hover::after {
+  content: "Holiday";
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  transform: translate(-50%, -120%);
+  white-space: nowrap;
+}
+::ng-deep mat-calendar {
+  transform: scale(0.8);
+  transform-origin: top left;
+}

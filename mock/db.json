@@ -87,5 +87,183 @@
       "id": 10
     }
   ],
-  "leaveRequests": []
+  "leaveRequests": [
+    {
+      "employeeId": 1,
+      "employeeName": "HR Admin",
+      "fromDate": "2026-03-03",
+      "toDate": "2026-03-09",
+      "type": "casual",
+      "reason": "ssds",
+      "status": "approved",
+      "id": 1
+    },
+    {
+      "employeeId": 1,
+      "employeeName": "HR Admin",
+      "fromDate": "0003-01-03",
+      "toDate": "0030-09-09",
+      "type": "casual",
+      "reason": "ds",
+      "status": "approved",
+      "id": 2
+    },
+    {
+      "employeeId": 1,
+      "employeeName": "HR Admin",
+      "fromDate": "2026-03-03",
+      "toDate": "2026-03-08",
+      "type": "casual",
+      "reason": "dfds",
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "employeeId": 1,
+      "employeeName": "HR Admin",
+      "fromDate": "2026-03-06",
+      "toDate": "2026-03-09",
+      "type": "casual",
+      "reason": "222sds",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "employeeId": 3,
+      "employeeName": "Regular Employee",
+      "fromDate": "2026-03-09",
+      "toDate": "2026-03-13",
+      "type": "casual",
+      "reason": "hjhj",
+      "status": "approved",
+      "id": 5
+    },
+    {
+      "employeeId": 3,
+      "employeeName": "Regular Employee",
+      "fromDate": "2026-03-09",
+      "toDate": "2026-03-10",
+      "type": "casual",
+      "reason": "dsfds",
+      "status": "approved",
+      "id": 6
+    },
+    {
+      "employeeId": 3,
+      "employeeName": "Regular Employee",
+      "fromDate": "2026-04-08",
+      "toDate": "2026-04-10",
+      "type": "casual",
+      "reason": "fffdfd",
+      "status": "pending",
+      "id": 7
+    }
+  ],
+  "leaveBalance": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "type": "casual",
+      "total": 12,
+      "used": 2,
+      "remaining": 10
+    },
+    {
+      "id": 2,
+      "employeeId": 1,
+      "type": "sick",
+      "total": 10,
+      "used": 1,
+      "remaining": 9
+    }
+  ],
+  "leaveTypes": [
+    {
+      "id": 1,
+      "name": "Casual",
+      "totalPerYear": 12
+    },
+    {
+      "id": 2,
+      "name": "Sick",
+      "totalPerYear": 10
+    },
+    {
+      "id": 3,
+      "name": "Earned",
+      "totalPerYear": 15
+    }
+  ],
+  "holidays": [
+    {
+      "id": 1,
+      "name": "Republic Day",
+      "date": "2026-01-26"
+    },
+    {
+      "id": 2,
+      "name": "Independence Day",
+      "date": "2026-08-15"
+    },
+    {
+      "id": 3,
+      "name": "Christmas",
+      "date": "2026-12-25"
+    }
+  ],
+  "dashboardstats": [
+    {
+      "totalEmployees": 120,
+      "onLeave": 8,
+      "newJoinees": 5,
+      "departmentCount": 6
+    }
+  ],
+  "sections": [
+    {
+      "sectionName": "Personal Information",
+      "fields": [
+        {
+          "label": "First Name",
+          "name": "firstName",
+          "type": "text",
+          "required": true
+        },
+          {"label":"Email","name":"email","type":"email"},
+        {
+          "label": "Date of Birth",
+          "name": "dob",
+          "type": "date",
+          "required": true
+        },
+        {
+        "label":"Spouse Name",
+        "name":"spouseName",
+        "type":"text",
+        "dependsOn":"maritalStatus",
+        "value":"Married"
+        }
+      ]
+    },
+    {
+      "sectionName": "Employment Details",
+      "fields": [
+        {
+          "label": "Employee ID",
+          "name": "employeeId",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Department",
+          "name": "department",
+          "type": "select",
+          "option": ["HR", "Engineering", "Finance"],
+          "required": true
+        },
+        {"label":"Resume","name":"resume","type":"file"}
+      ]
+    }
+  ]
+
 }

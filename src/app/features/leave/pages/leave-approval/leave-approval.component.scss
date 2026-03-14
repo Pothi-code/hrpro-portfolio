@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 8px;
+}
+
+mat-chip {
+  text-transform: capitalize;
+}
+.approved{
+  color: green;
+  font-weight: 600;
+
+}
+.rejected{
+  color: red;
+  font-weight: 600;
+
+}
+.pending{
+  color: orange;
+  font-weight: 600;
+
+}

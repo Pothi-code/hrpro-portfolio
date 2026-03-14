@@ -3,21 +3,57 @@
   <!-- Sidebar -->
   <mat-sidenav #drawer [mode]="isMobile?'over':'side'" [opened]="!isMobile" class="sidenav">
 
-    <h2 class="logo">HR Pro</h2>
+    
 
-    <mat-nav-list>
+    <mat-nav-list *ngFor="let item of menu()">
 
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" (click)="closeIfMobile()">
-        <mat-icon>dashboard</mat-icon>
-        Dashboard
+      <a mat-list-item [routerLink]="item.path" routerLinkActive="active" (click)="closeIfMobile()">
+        {{ item.label }}
       </a>
 
-      <a *ngIf="role() === 'admin'"
+      <!-- <a *ngIf="role() === 'admin'"
          mat-list-item
          routerLink="/employees"
          routerLinkActive="active" (click)="closeIfMobile()">
         <mat-icon>group</mat-icon>
         Employees
+      </a>
+      <a *ngIf="role() === 'manager'"
+         mat-list-item
+         routerLink="/leave-approval"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>mail</mat-icon>
+        Leave Requests
+      </a>
+      <a *ngIf="role() === 'employee'"
+         mat-list-item
+         routerLink="/leave-balance"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>leave</mat-icon>
+        Leave Balance
+      </a>
+       <a *ngIf="role() === 'employee'"
+         mat-list-item
+         routerLink="/leave-request"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>leave</mat-icon>
+        Apply Leave
+      </a>
+
+      <a *ngIf="role() === 'employee'"
+         mat-list-item
+         routerLink="/my-leave"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>leave</mat-icon>
+        My Leaves
+      </a>
+
+      <a *ngIf="role() === 'employee'"
+         mat-list-item
+         routerLink="/holiday-calendar"
+         routerLinkActive="active" (click)="closeIfMobile()">
+        <mat-icon>calendar</mat-icon>
+        Holiday Calendar
       </a>
 
       <a *ngIf="role() === 'hr'"
@@ -26,7 +62,7 @@
          routerLinkActive="active" (click)="closeIfMobile()">
         <mat-icon>settings</mat-icon>
         HR Settings
-      </a>
+      </a> -->
 
     </mat-nav-list>
 

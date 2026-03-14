@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<div class="container" *ngIf="dashboardData$ | async as data; else loading">
+    <div class="card-grid">
+        <mat-card class="dashboard-card">
+            <mat-card-title>Total Employees</mat-card-title>
+            <mat-icon>groups</mat-icon>
+            <mat-card-content><h1>{{data.stats[0].totalEmployees}}</h1></mat-card-content>
+        </mat-card>
+        <mat-card class="dashboard-card">
+            <mat-card-title>Employees on leave</mat-card-title>
+            <mat-icon>event_busy</mat-icon>
+            <mat-card-content><h1>{{data.stats[0].onLeave}}</h1></mat-card-content>
+        </mat-card>
+        <mat-card class="dashboard-card">
+            <mat-card-title>New Joinees</mat-card-title>
+            <mat-icon>person_add</mat-icon>
+            <mat-card-content><h1>{{data.stats[0].newJoinees}}</h1></mat-card-content>
+        </mat-card>
+        <mat-card class="dashboard-card">
+            <mat-card-title>Department Count</mat-card-title>
+            <mat-icon>apartment</mat-icon>
+            <mat-card-content><h1>{{data.stats[0].departmentCount}}</h1></mat-card-content>
+        </mat-card>
+    </div>
+    <mat-card class="holiday-card">
+
+<mat-card-title>Upcoming Holidays</mat-card-title>
+
+<mat-list>
+
+<mat-list-item *ngFor="let holiday of data.holidays| async">
+
+<!-- <mat-icon matListIcon>event</mat-icon> -->
+
+<div matLine>{{holiday.name}}</div>
+<div matLine>{{holiday.date}}</div>
+
+</mat-list-item>
+
+</mat-list>
+
+</mat-card>
+
+
+</div>
+<ng-template #loading>
+    <ngx-skeleton-loader
+count="4"
+appearance="line"
+></ngx-skeleton-loader>
+</ng-template>
